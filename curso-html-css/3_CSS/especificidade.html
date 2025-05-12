@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Ordem de Execução do CSS</title>
+  <style>
+    p {
+      color: red; /* Especificidade: 1 */
+    }
+
+    .destaque {
+      color: green; /* Especificidade: 10 */
+    }
+
+    #especial {
+      color: blue; /* Especificidade: 100 */
+    }
+
+    /* Mesmo ID, mas com !important */
+    #especial {
+      color: purple !important;
+    }
+
+    /* Mesmo ID, mesmo !important, mas aparece depois */
+    #especial {
+      color: orange !important;
+    }
+  </style>
+</head>
+<body>
+
+  <p id="especial" class="destaque">
+    Este texto mostra a ordem de execução do CSS.
+  </p>
+
+</body>
+</html>
